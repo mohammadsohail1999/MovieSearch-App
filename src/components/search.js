@@ -33,7 +33,7 @@ const onsubmit = async (e)=>{
 
 const response = await axios.get('http://www.omdbapi.com/', {
       params: {
-        apikey: 'YOUR_KEY',
+        apikey: 'd9835cc5',
         s: submit
       }
     
