@@ -21,6 +21,52 @@ line-height: 2rem;
 
 
 margin-top:0.9rem;
+overflow: hidden;
+
+transition: transform 0.3s;
+
+}
+
+.img{
+    overflow: hidden;
+    
+     
+     background-color: rgba(0,0,0,0.6);
+     
+    
+}
+
+.img img{
+
+
+transition: transform 0.7s;
+
+
+}
+
+.img img:hover{
+    transform: scale(1.15);
+    background-image:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0.7));
+     z-index: 10;
+}
+
+
+
+
+.cardStyle{
+
+   
+    transition: transform 0.4s
+
+
+
+
+}
+.cardStyle:hover{
+
+    
+    transform: scale(1.11);
+
 
 
 

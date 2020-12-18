@@ -1,30 +1,35 @@
+
 import React from 'react';
 import {Link} from  'react-router-dom';
+
+import './search.css'
+
+
+
+
+const Card = ({data,setDetail,Loading})=>{
+
+  
+
+
+const cards = data  ?  data.map((el)=>{
  
-
-
-
-
-const Card = ({data,setDetail})=>{
-
-    
-
- const cards =  data.map((el)=>{
- 
-if(data.length !== 0){
-   return  <div key={el.imdbID} className="four wide column">
-   <div className="ui card">
-    <div className="image">
-      <img src={el.Poster}/>
+  return  <div key={el.imdbID} className="four wide column">
+   <div className = "ui card" >
+    < div className = "image img" >
+      < img src = {
+        el.Poster
+      }
+        alt={el.Title} />
     </div>
     <div className="content">
- <a className="header">{el.Title}</a>
+ <div className="header">{el.Title}</div>
       <div className="">
-          <label>Release Date</label>
+          <label>Release Date:</label>
         <span className="date">{el.Year}</span>
       </div>
     </div>
-    <div className="extra content">
+    <div className="extra content" style={{textAlign:"center"}}>
       <Link className="ui green button" to="/details" onClick={()=>{setDetail(el.Title)}}>
              More details...
              
@@ -32,9 +37,13 @@ if(data.length !== 0){
     </div>
   </div>
   </div>
-}
-return null;
-    }) 
+
+    
+
+    }) : <div style={{margin:"auto",
+  paddingTop: 60,fontSize: 22 }}>Can't find any results</div>
+
+  
 
  
 

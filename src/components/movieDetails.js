@@ -36,10 +36,10 @@ fetchDetails()
 
 
 
-return (<div className="ui segment">
+return (<div style={{marginTop:30}} className="ui segment">
  
  <div className="ui grid">
-   <div className="six wide column"> <img className="ui centered image" src={data.Poster}/>
+   <div className="six wide column"> <img alt={data.Title} className="ui centered image" src={data.Poster}/>
   <div className="btn"> <Link className="ui green button" to="/">Go back to Search!</Link> </div>
    </div>
     <div className="ten wide column">

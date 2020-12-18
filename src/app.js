@@ -1,18 +1,9 @@
-import React,{useState,useEffect} from 'react';
-import {Route,BrowserRouter,Link} from 'react-router-dom';
+import React,{useState} from 'react';
+import {Route,BrowserRouter} from 'react-router-dom';
 import Search from './components/search'
 import Card from './components/Cards'
 import Details from './components/movieDetails';
-
-
-
-
-
-
-
-
-
-
+import Loader from './components/Loader';
 
 
 
@@ -22,12 +13,12 @@ const App = ()=>{
   const [submit, setSubmit]= useState('');
   const [data , setData] = useState([]);
   const [detail, setDetail]= useState('');
+   const [Loading,setLoading] = useState(false);
 
-console.log(detail);
 
-  useEffect(()=>{
-    setSubmit(term)
-  },[term])
+
+   
+
 
 
 
@@ -44,16 +35,25 @@ console.log(detail);
 
     submit ={submit} setSubmit = {setSubmit}
 
+    setLoading = {setLoading}
+
   
   />}/>
 
 
- <Route path="/" exact render={()=><Card data = {data} setDetail= {setDetail}/>}/>
-<Route path="/details" exact render={()=><Details detail={detail}/>}/>
+ <Route path="/" exact render={()=><Card data = {data} setDetail= {setDetail} Loading={Loading}/>}/>
+<Route path="/details" exact render={()=><Details detail={detail} Loading={Loading}/>}/>
 
 </div>
       
 </BrowserRouter>
+
+{Loading ? <Loader/>: null}
+
+
+
+
+
 
 
   </div>)
